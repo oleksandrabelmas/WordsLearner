@@ -58,14 +58,29 @@ def create_user_table(user_id):
             id serial PRIMARY KEY,
             word varchar(100) NOT NULL,
             translation varchar(100) NOT NULL,
-            status varchar(10) NOT NULL
+            status varchar(10) DEFAULT 'a'
             );"""
         )
 
     else:
         print('user exist')
 
-#    if connection:
-#        cursor.close()
-#        connection.close()
+
+def insert_words(user_id, word_list):
+    print('SSSSSSSSSUIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII')
+
+    connection.autocommit = True
+
+    try:
+        cursor.execute(
+            f"""
+            INSERT INTO user_{user_id} (word, translation) VALUES ('{word_list[0]}', '{word_list[1]}');
+            """
+        )
+
+    except Exception as ex:
+        print('ERROR', ex)
+
+
+
 

@@ -1,1 +1,1 @@
-from handlers.handlers import *
+from handlers.input_handlers import *
