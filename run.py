@@ -12,7 +12,7 @@ except Exception as ex:
     print(ex)
 
 
-handlers.register_handlers(dp)
+handlers.register_input_handlers(dp)
 
 
 if __name__ == '__main__':

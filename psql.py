@@ -66,8 +66,8 @@ def create_user_table(user_id):
         print('user exist')
 
 
+# Записую слова в табличку
 def insert_words(user_id, word_list):
-    print('SSSSSSSSSUIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII')
 
     connection.autocommit = True
 
@@ -77,7 +77,7 @@ def insert_words(user_id, word_list):
             INSERT INTO user_{user_id} (word, translation) VALUES ('{word_list[0]}', '{word_list[1]}');
             """
         )
-
+        print(f'Додано {word_list[0]} - {word_list[1]}')
     except Exception as ex:
         print('ERROR', ex)
 
